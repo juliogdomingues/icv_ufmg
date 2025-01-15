@@ -278,7 +278,7 @@ y_combined = np.concatenate((training_labels, validation_labels), axis=0)
 split_index = np.concatenate(([-1] * len(X_train), [0] * len(X_val)))
 predefined_split = PredefinedSplit(test_fold=split_index)
 
-param_grid = {'C': [0.1, 1, 5], 'kernel': ['linear','rbf']}
+param_grid = {'C': [0.1, 1, 5], 'kernel': ['linear']}
 
 # Normalizando os dados empregados
 scaler = StandardScaler()

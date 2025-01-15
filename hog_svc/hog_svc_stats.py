@@ -308,11 +308,13 @@ for i in range(num_captchas):
 
 # Montando um gráfico de barras com os resultados encontrados
 correct_labels = ['1', '2', '3', '4', '5', '6']
+correct_percentages = [(count / num_captchas) * 100 for count in correct_bins]
+
 plt.figure(figsize=(8, 6))
-plt.bar(correct_labels, correct_bins, color='skyblue')
-plt.xlabel('Acerto de no mínimo n caracteres')
-plt.ylabel('Taxa de ocorrência no teste')
-plt.title('HOG + SVC')
+plt.bar(correct_labels, correct_percentages, color='deepskyblue')
+plt.xlabel('Número mínimo de caracteres corretos')
+plt.ylabel('Taxa de reconhecimento')
+plt.title('HOG + SVC\nTaxa de Reconhecimento por Número de Caracteres Corretos')
 
 # Salvando o gráfico gerado com o desempenho do modelo nos dados de teste
 output_image_path = './results/desempenho_geral.png'
